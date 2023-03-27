@@ -1,18 +1,79 @@
 # Vue 3 + TypeScript + Vite
 
-This template should help get you started developing with Vue 3 and TypeScript in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+## 環境建置
+### Eslint + prettier配置
+1. 安裝 eslint
+   > npm i aslant
 
-## Recommended IDE Setup
+2. 初始化配置eslint
+   > npx eslint —init
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+3. 選擇模式
+   > To check syntax and find problems
+      
+   選擇語言
+   > javascript
 
-## Type Support For `.vue` Imports in TS
+   選擇語言框架      
+   > vue.js
+   
+   使用ts?
+   > yes
 
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
+   在哪裡運行(使用空白鍵選組兩個 Browser + Node)
 
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
+   配置文件的格式
+   > javascript
 
-1. Disable the built-in TypeScript Extension
-   1. Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-   2. Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
+   現在就要安裝嗎？
+   > yes
+
+   哪個管理器     
+   > npm 
+      
+4. 安裝完成後會自動產生(eslintrc.js)
+
+5. 安裝vite-plugin-eslintnpm: 
+   > npm i vite-plugin-eslint
+6. 安裝 eslint-parser    
+   > npm i  @babel/core
+
+   > npm i  @babel/eslint-parser
+
+7. 安裝prettier
+   >  npm i prettier
+
+   >  npm i eslint-config-prettier
+
+   >  npm i eslint-plugin-prettier 
+
+
+8. 配置 vite.config.js
+```ts
+  import eslintPlugin from 'vite-plugin-eslint'
+  
+  plugins: [
+    vue(),
+    eslintPlugin({
+      include: [ 
+         'src/**/*.js',
+         'src/**/*.vue',
+         'src/*.js',
+         'src/*.vue'
+      ]
+   }),
+  ]
+```
+9. 配置 .eslintrc.cjs
+
+## 開啟
+
+```
+npm run dev
+```
+
+### 打包
+
+```
+npm build
+```
