@@ -9,14 +9,15 @@ export default defineConfig({
     vue(),
     eslintPlugin({
       include: ['src/**/*.js', 'src/**/*.vue', 'src/*.js', 'src/*.vue']
-    })],
+    })
+  ],
   resolve: {
     alias: {
-        '@': path.resolve(__dirname, 'src')
+      '@': path.resolve(__dirname, 'src')
     }
   },
   server: {
     host: '0.0.0.0', //啟動NetWork 本地ip
     port: 8080
-  }  
+  }
 })
